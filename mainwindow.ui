@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>856</width>
+    <height>597</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QListWidget{outline: none;}
+</string>
+   </property>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>351</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget  {
+
+border-width: 0px 0px 0px 0px; 
+border-style: solid;
+ border-color: rgb(76,76,76);
+	background-color: rgba(255, 255, 255,0);
+}
+
+
+
+</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QScrollArea:QScrollBar{width:0;height:0}
+QScrollBar{width:0;height:0}</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>329</width>
+          <height>10000</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>10000</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QScrollBar{width:0;height:0}</string>
+        </property>
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>311</width>
+           <height>321</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget  {
+
+border-width: 0px 0px 0px 0px; 
+border-style: solid;
+ border-color: rgb(76,76,76);
+ border-radius:15px;
+background-color: rgb(255, 255, 255);
+
+}
+
+
+
+</string>
+         </property>
+         <widget class="QListWidget" name="listWidget">
+          <property name="geometry">
+           <rect>
+            <x>1</x>
+            <y>10</y>
+            <width>311</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>My font</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QScrollBar{width:0;height:0}
+QListWidget
+{
+	font-size :20px;
+	
+}
+
+QListWidget::Item
+{
+    border:0px;
+    background-color:rgba(252,252,252,1);
+	
+	margin-left:10px;
+	
+
+}
+/*列表每个item在鼠标移到上面时的属性值*/
+QListWidget::Item:hover
+{
+    background-color:rgba(244,244,244,1);
+    padding-top:0px;
+    padding-bottom:0px;
+	outline: none;
+}
+/*列表每个item在被选中时的属性值*/
+QListWidget::item:selected
+{
+    background-color:rgba(99,160,248,1);
+    border: none;
+	outline: none;
+}
+QListWidget::item 
+{ 
+	border-bottom: 1px solid;
+	border-color :rgba(234,234,234,1);
+}
+
+
+
+
+
+</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::NoDragDrop</enum>
+          </property>
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
+          <property name="modelColumn">
+           <number>0</number>
+          </property>
+          <property name="uniformItemSizes">
+           <bool>false</bool>
+          </property>
+          <property name="batchSize">
+           <number>100</number>
+          </property>
+          <item>
+           <property name="text">
+            <string> 学校官网</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="1"/>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>226</red>
+              <green>226</green>
+              <blue>226</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/1.jpg</normaloff>:/src/button/1.jpg</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 学生工作管理系统</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="2"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/5.png</normaloff>:/src/button/5.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 统一门户</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="3"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/2.jpg</normaloff>:/src/button/2.jpg</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 办事大厅</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="4"/>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="Dense2Pattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/3.jpg</normaloff>:/src/button/3.jpg</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 线上图书馆</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="5"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/4.png</normaloff>:/src/button/4.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 统一支付平台</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="6"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/6.png</normaloff>:/src/button/6.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 教务系统</string>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/9.png</normaloff>:/src/button/9.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> VPN</string>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/7.png</normaloff>:/src/button/7.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="widget_5" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>340</y>
+           <width>311</width>
+           <height>171</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget  {
+
+border-width: 0px 0px 0px 0px; 
+border-style: solid;
+ border-color: rgb(76,76,76);
+ border-radius:15px;
+background-color: rgb(255, 255, 255);
+
+}
+
+
+
+</string>
+         </property>
+         <widget class="QListWidget" name="listWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>1</x>
+            <y>10</y>
+            <width>311</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>My font</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QScrollBar{width:0;height:0}
+QListWidget
+{
+	font-size :20px;
+	
+}
+
+QListWidget::Item
+{
+    border:0px;
+    background-color:rgba(252,252,252,1);
+	
+	margin-left:10px;
+	
+
+}
+/*列表每个item在鼠标移到上面时的属性值*/
+QListWidget::Item:hover
+{
+    background-color:rgba(244,244,244,1);
+    padding-top:0px;
+    padding-bottom:0px;
+	outline: none;
+}
+/*列表每个item在被选中时的属性值*/
+QListWidget::item:selected
+{
+    background-color:rgba(99,160,248,1);
+    border: none;
+	outline: none;
+}
+QListWidget::item 
+{ 
+	border-bottom: 1px solid;
+	border-color :rgba(234,234,234,1);
+}
+
+
+
+
+
+</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::NoDragDrop</enum>
+          </property>
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
+          <property name="modelColumn">
+           <number>0</number>
+          </property>
+          <property name="uniformItemSizes">
+           <bool>false</bool>
+          </property>
+          <property name="batchSize">
+           <number>100</number>
+          </property>
+          <item>
+           <property name="text">
+            <string> 校园卡管理</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="1"/>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>226</red>
+              <green>226</green>
+              <blue>226</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/8.png</normaloff>:/src/button/8.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 宿舍报修</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="2"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/12.png</normaloff>:/src/button/12.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 校园网管理</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="3"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/10.png</normaloff>:/src/button/10.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 水电空调</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="4"/>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="Dense2Pattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/11.png</normaloff>:/src/button/11.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="widget_6" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>530</y>
+           <width>311</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget  {
+
+border-width: 0px 0px 0px 0px; 
+border-style: solid;
+ border-color: rgb(76,76,76);
+ border-radius:15px;
+background-color: rgb(255, 255, 255);
+
+}
+
+
+
+</string>
+         </property>
+         <widget class="QListWidget" name="listWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>1</x>
+            <y>10</y>
+            <width>311</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>My font</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QScrollBar{width:0;height:0}
+QListWidget
+{
+	font-size :20px;
+	
+}
+
+QListWidget::Item
+{
+    border:0px;
+    background-color:rgba(252,252,252,1);
+	
+	margin-left:10px;
+	
+
+}
+/*列表每个item在鼠标移到上面时的属性值*/
+QListWidget::Item:hover
+{
+    background-color:rgba(244,244,244,1);
+    padding-top:0px;
+    padding-bottom:0px;
+	outline: none;
+}
+/*列表每个item在被选中时的属性值*/
+QListWidget::item:selected
+{
+    background-color:rgba(99,160,248,1);
+    border: none;
+	outline: none;
+}
+QListWidget::item 
+{ 
+	border-bottom: 1px solid;
+	border-color :rgba(234,234,234,1);
+}
+
+
+
+
+
+</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::NoDragDrop</enum>
+          </property>
+          <property name="layoutMode">
+           <enum>QListView::SinglePass</enum>
+          </property>
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
+          <property name="modelColumn">
+           <number>0</number>
+          </property>
+          <property name="uniformItemSizes">
+           <bool>false</bool>
+          </property>
+          <property name="batchSize">
+           <number>100</number>
+          </property>
+          <item>
+           <property name="text">
+            <string> 关于程序</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="1"/>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>226</red>
+              <green>226</green>
+              <blue>226</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/13.png</normaloff>:/src/button/13.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string> 关于作者</string>
+           </property>
+           <property name="whatsThis">
+            <string notr="true" comment="2"/>
+           </property>
+           <property name="icon">
+            <iconset resource="button.qrc">
+             <normaloff>:/src/button/14.png</normaloff>:/src/button/14.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>50</y>
+      <width>431</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget  {
+
+border-width: 0px 0px 0px 0px; 
+border-style: solid;
+ border-color: rgb(76,76,76);
+ border-radius:25px;
+background-color: rgb(255, 255, 255);
+
+}
+
+
+
+</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>371</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{font:  24px;}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>861</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	
+	border-image: url(:/src/background.png);
+
+	background-color: rgba(255,255,255,0);
+
+
+
+</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>6</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/src/button/min.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>820</x>
+       <y>6</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/src/button/shutdown.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>10</y>
+      <width>281</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{background:transparent;
+
+font-size :17px;}</string>
+    </property>
+    <property name="text">
+     <string>学生常用功能整合</string>
+    </property>
+   </widget>
+   <zorder>widget_4</zorder>
+   <zorder>widget</zorder>
+   <zorder>widget_3</zorder>
+   <zorder>label</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="button.qrc"/>
+ </resources>
+ <connections/>
+</ui>
