@@ -1,10 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<QFont>
-#include<QFile>
-#include<QFontDatabase>
-#include<QString>
-QString loadFontFamilyFromFiles(const QString &fontFileName)
+
+QString MainWindow::loadFontFamilyFromFiles(const QString &fontFileName)
 {
 
     static QHash<QString, QString> tmd;
@@ -15,7 +12,7 @@ QString loadFontFamilyFromFiles(const QString &fontFileName)
     if(!fontFile.open(QIODevice::ReadOnly))
     {
         qDebug()<<"Open font file error";
-        return font;
+        return "Error";
     }
 
     int loadedFontID = QFontDatabase::addApplicationFontFromData(fontFile.readAll());
@@ -42,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QFont font = ui->label->font();//默认值
     QString family = loadFontFamilyFromFiles(QApplication::applicationDirPath() + "/font.otf");
+    if (family=="Error")
+        family = loadFontFamilyFromFiles(QApplication::applicationDirPath() + "/font.ttf");//辛辛苦苦做适配
     font.setFamily(family);
 
     ui->listWidget->setIconSize(QSize(30,30));
@@ -62,12 +61,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::resetListWidget(int arr[],int len)
+void MainWindow::resetListWidget(int arr[])
 {
     //通过reset其他ListWidget使得其他ListWidget的样式回归未按下
     //在鼠标点击事件调用或者在itemClicked调用
+    int len=sizeof(arr)/sizeof(arr[0]);
     for(int i=0;i<len;i++)
     {
+
         if(arr[i]==1)ui->listWidget->reset();
         if(arr[i]==2)ui->listWidget_2->reset();
         if(arr[i]==3)ui->listWidget_3->reset();
@@ -79,7 +80,7 @@ void MainWindow::mousePressEvent(QMouseEvent *e)//重写鼠标事件实现窗口
 {
     last = e->globalPos();
     int waitlist[3]={1,2,3};
-    resetListWidget(waitlist,3);
+    resetListWidget(waitlist);
 }
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
@@ -113,7 +114,7 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     int waitlist[2]={2,3};
-    resetListWidget(waitlist,3);
+    resetListWidget(waitlist);
     //ui->label_2->setContentsMargins(0,0,0,0);
     //qDebug()<<item;
     if(item->text()==" 学校官网")
@@ -138,16 +139,21 @@ void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
 void MainWindow::on_listWidget_3_itemClicked(QListWidgetItem *item)
 {
     int waitlist[2]={1,2};
-    resetListWidget(waitlist,3);
+    resetListWidget(waitlist);
     if(item->text()==" 校园卡管理")
-        ui->label_2->setText(tr("<p>校园卡管理\n</p><p>由于企业微信的神奇程序员直接通过网址中的加密JSON访问个人校园卡界面，还加了时间校验，还没留接口，所以本条目请通过教程自行访问（我要是能解析出来这个JSON我已经不在这里当学生了）\n</p>"
-                                "<a href = 'http://www.scut.edu.cn/new/'>图片教程</a>"));
+        ui->label_2->setText(("<p>校园卡管理\n</p><p>由于企业微信的神奇程序员直接通过网址中的加密JSON访问个人校园卡界面，还加了时间校验，还没留接口，所以本条目请通过教程自行访问（我要是能解析出来这个JSON我已经不在这里当学生了）\n</p>"
+                                "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/card.png'>图片教程</a>"));
     if(item->text()==" 宿舍报修")
-        ui->label_2->setText(tr("<p>宿舍报修\n</p><p>宿舍物品损坏后报修\n</p><a href = 'http://sms.scut.edu.cn/'>图片教程</a>"));
+        ui->label_2->setText(("<p>宿舍报修\n</p><p>宿舍物品损坏后报修\n</p>"
+                              "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/1.png'>图片教程</a>"));
     if(item->text()==" 校园网管理")
-        ui->label_2->setText(tr("<p>校园网管理\n</p><p>校园网缴费，查看IP，子网掩码，DNS。请确保按照教程进行以正确连接互联网。\n</p><a href = 'http://my.scut.edu.cn/up/view?m=up#act=portal/viewhome'>图片教程</a>"));
+        ui->label_2->setText(("<p>校园网管理\n</p><p>校园网缴费，查看IP，子网掩码，DNS。请确保按照教程进行以正确连接互联网。\n</p>"
+                              "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/internet.png'>图片教程</a>"));
     if(item->text()==" 水电空调")
-        ui->label_2->setText(tr("<p>水电空调\n</p><p>缴纳水费、电费和空调费，热水水控小程序\n</p><a href = 'http://ehall.scut.edu.cn/fp/view?m=fp#act=fp/formHome'>图片教程</a>"));
+        ui->label_2->setText(("<p>水电空调\n</p><p>缴纳水费、电费和空调费，热水水控小程序\n</p>"
+                              "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/water.png'>图片教程</a>"));
+
+    //QDesktopServices::openUrl(QUrl(QApplication::applicationDirPath()+"/src/course/1.png")); 另一种方案
 
 }
 
@@ -155,7 +161,7 @@ void MainWindow::on_listWidget_3_itemClicked(QListWidgetItem *item)
 void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
 {
     int waitlist[2]={1,3};
-    resetListWidget(waitlist,3);
+    resetListWidget(waitlist);
     if(item->text()==" 关于程序")
     {
         ui->label_2->setText(tr("<p>Environment:</p>"
@@ -166,8 +172,11 @@ void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
     }
     if(item->text()==" 关于作者")
     {
-        ui->label_2->setText(tr("<p>作者是个摸鱼怪+躺平人，不保证更新速率。一般来说当季新番越拉作者更新越快（逃</p>"));
+        ui->label_2->setText(tr("<p>有任何新功能新条目建议，请发送邮件至2450313919@qq.com</p>"
+                                "<p>作者是个摸鱼怪+躺平人，不保证更新速率。一般来说当季新番越拉作者更新越快（逃</p>"));
     }
 }
+
+
 
 
