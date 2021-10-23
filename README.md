@@ -25,6 +25,7 @@ HarmonyOS_Sans_SC_Regular
 Copyright © 2021 HarmonyOS. All Rights Reserved.
 
 # Program
-Copyright © 2021 EMILIIIIA. All Rights Reserved.
+Copyright © 2021 EMILIIIIA. 
 
+This project is licensed under version 2 of the GNU Lesser General Public License.
 
