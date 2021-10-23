@@ -145,9 +145,9 @@ void MainWindow::on_listWidget_3_itemClicked(QListWidgetItem *item)
                                 "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/card.png'>图片教程</a>"));
     if(item->text()==" 宿舍报修")
         ui->label_2->setText(("<p>宿舍报修\n</p><p>宿舍物品损坏后报修\n</p>"
-                              "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/1.png'>图片教程</a>"));
+                              "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/fix.png'>图片教程</a>"));
     if(item->text()==" 校园网管理")
-        ui->label_2->setText(("<p>校园网管理\n</p><p>校园网缴费，查看IP，子网掩码，DNS。请确保按照教程进行以正确连接互联网。\n</p>"
+        ui->label_2->setText(("<p>校园网管理\n</p><p>校园网缴费，查看IP，子网掩码，DNS。\n</p>"
                               "<a href = '"+QString(QApplication::applicationDirPath())+"/src/course/internet.png'>图片教程</a>"));
     if(item->text()==" 水电空调")
         ui->label_2->setText(("<p>水电空调\n</p><p>缴纳水费、电费和空调费，热水水控小程序\n</p>"
