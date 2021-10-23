@@ -27,5 +27,5 @@ Copyright © 2021 HarmonyOS. All Rights Reserved.
 # Program
 Copyright © 2021 EMILIIIIA. 
 
-This project is licensed under version 2 of the GNU Lesser General Public License.
+This project is licensed under version 2 of the GNU General Public License.
 
